@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Header = () => {
+const Weather = () => {
     return (
         <div>
-            <h1>Home Schedule</h1>
+            <h1>Weather</h1>
         </div>
     );
 };
 
-export default Header;
+export default Weather;
