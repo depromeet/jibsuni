@@ -10,3 +10,8 @@ export function getWeatherAPI() {
   return axios.post('/api/weathers').then(r => r.json())
   // TODO-groovypark: test api
 }
+
+export function getAuthAPI() {
+  return axios.post('/api/members/login').then(r => r.json())
+  // TODO-groovypark: test api
+}
