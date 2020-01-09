@@ -1,17 +1,19 @@
 import axios from './axios';
 
-// TODO-groovypark: Memo
-// POST /api/members/login
-// POST /api/members/logout
-// GET /api/members/me
-// GET /api/weathers
-
 export function getWeatherAPI() {
   return axios.post('/api/weathers').then(r => r.json())
-  // TODO-groovypark: test api
 }
 
-export function getAuthAPI() {
+export function postLoginAPI() {
   return axios.post('/api/members/login').then(r => r.json())
-  // TODO-groovypark: test api
+}
+
+export function postLogoutAPI() {
+  return axios.post('/api/members/logout').then(r => r.json())
+}
+
+export function getAuthAPI(tokenStr) {
+  return axios.post('/api/members/me',
+    { headers: {"Authorization" : `Bearer ${tokenStr}` }}
+  ).then(r => r.json())
 }
