@@ -1,17 +1,11 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import Profile from "../../components/Profile";
 
 const Login = () => {
 
-  const onLogin = () => {
-    
-  };
-
   return (
     <div>
-      <Profile
-        onClick={onLogin}
-      />
+      <Profile />
     </div>
   );
 };
