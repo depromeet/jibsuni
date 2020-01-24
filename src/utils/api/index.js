@@ -12,8 +12,13 @@ export function postLogoutAPI() {
   return axios.post('/api/members/logout').then(r => r.json())
 }
 
-export function getAuthAPI(tokenStr) {
-  return axios.get('/api/members/me',
-    { headers: {"Authorization" : `Bearer ${tokenStr}` }}
-  ).then(r => r.json())
+export async function getAuthAPI(tokenStr) {
+  const { data } = await axios.get('/api/members/me', { 
+    headers: {
+      "Authorization" : `Bearer ${tokenStr}` 
+    }
+  });
+  
+  return data;
 }
+

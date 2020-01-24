@@ -4,5 +4,5 @@ import {authReducer} from './AuthReducer';
 
 export default combineReducers({
   weatherReducer,
-  authReducer
+  auth: authReducer
 });

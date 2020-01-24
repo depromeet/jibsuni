@@ -1,19 +1,43 @@
-import {AuthActionType} from '../actions/AuthActions'
+import { AUTH_TOKEN_STORAGE_KEY } from '../../constants';
+import {AuthActionType} from '../actions/AuthActions';
 
-const initialState = {
-  isLoggedIn: false,
-  token: '',
-  profile: {
-    id: null,
-    providerType: null,
-    providerUserId: null,
-    createdAt: null,
-    updatedAt: null,
-  }
-};
+export function createInitialCommonState() {
+  const storage = window.localStorage;
 
-export const authReducer = (state = initialState, action) => {
+  return {
+    isInitialized: false,
+    isCheckingAuth: true,
+    token: storage.getItem(AUTH_TOKEN_STORAGE_KEY),
+    user: null,
+
+    isLoggedIn: false,
+    profile: {
+      id: null,
+      providerType: null,
+      providerUserId: null,
+      createdAt: null,
+      updatedAt: null,
+    }
+  };
+}
+
+export function authReducer(state = createInitialCommonState(), action) {
   switch (action.type) {
+    case AuthActionType.CHECK_AUTH_REQUEST: {
+      return {
+        ...state,
+        isCheckingAuth: true
+      }
+    }
+
+    case AuthActionType.CHECK_AUTH_RESPONSE: {
+      return {
+        ...state,
+        isInitialized: true,
+        isCheckingAuth: false
+      }
+    }
+
     case AuthActionType.REQ_POST_LOGIN: {
       return {
         ...state,
