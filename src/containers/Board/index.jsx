@@ -1,10 +1,14 @@
-import React from 'react';
-import profile from '../../images/profile.svg'
-import * as styled from "./style";
+import React, {useState} from 'react';
+
 import Count from "../../components/Count";
 import Weather from "../../components/Weather";
+import NavBar from "../../components/NavBar";
+import profile from '../../images/profile.svg'
+import * as styled from "./style";
 
 function Board() {
+  const [navState, setNavState] = useState("all");
+
   return(
     <styled.Wrapper>
       <styled.Profile>
@@ -22,6 +26,13 @@ function Board() {
       <styled.WeatherWrapper>
         <Weather/>
       </styled.WeatherWrapper>
+      <styled.NavBarWrapper>
+        <NavBar title="ALL" onClick={() => setNavState("all")}/>
+        <NavBar title="침실" onClick={() => setNavState("bed")}/>
+        <NavBar title="거실" onClick={() => setNavState("living")}/>
+        <NavBar title="주방" onClick={() => setNavState("kitchen")}/>
+        <NavBar title="화장실" onClick={() => setNavState("toilet")}/>
+      </styled.NavBarWrapper>
     </styled.Wrapper>
   )
 }

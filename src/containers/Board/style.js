@@ -39,3 +39,7 @@ export const WeatherWrapper = styled.div`
   background-color: #ebecf0;
   margin: 36px auto 46px;
 `;
+
+export const NavBarWrapper = styled.div`
+  display: flex;
+`;
