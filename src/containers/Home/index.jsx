@@ -1,13 +1,20 @@
 import React from 'react';
-import Weather from "../../components/Weather";
+import Header from "../../components/Header";
+import Board from "../Board";
+import Sidebar from "../Sidebar";
+import * as styled from './style'
 
-const Home = () => {
+function Home() {
   return (
-    <div>
-      <Weather/>
-      Home
-    </div>
-  );
-};
+    <>
+      <Header/>
+      <styled.Wrapper>
+        <Sidebar/>
+        <styled.Room/>
+        <Board/>
+      </styled.Wrapper>
+    </>
+  )
+}
 
-export default Home;
+export default Home
