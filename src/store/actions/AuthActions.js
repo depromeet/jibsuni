@@ -1,20 +1,15 @@
 export const AuthActionType = {
-  CHECK_AUTH_REQUEST: 'auth/CHECK_AUTH_REQUEST',
-  CHECK_AUTH_RESPONSE: 'auth/CHECK_AUTH_RESPONSE',
+  REQ_GET_AUTH: 'auth/REQ_GET_AUTH',
   REQ_POST_LOGIN: 'auth/REQ_POST_LOGIN',
   REQ_POST_LOGOUT: 'auth/REQ_POST_LOGOUT',
-  REQ_GET_AUTH: 'auth/REQ_GET_AUTH',
 };
 
-export const checkAuthRequest = () => ({
-  type: AuthActionType.CHECK_AUTH_REQUEST,
-});
-
-export const checkAuthResponse = payload => {
+export const reqGetAuth = payload => {
+  // 페이지 진입 시 user 값 체크
   const { isAuthenticated, user } = payload;
 
   return {
-    type: AuthActionType.CHECK_AUTH_RESPONSE,
+    type: AuthActionType.REQ_GET_AUTH,
     payload: {
       isAuthenticated,
       user: isAuthenticated ? user : null,
@@ -22,24 +17,27 @@ export const checkAuthResponse = payload => {
   };
 };
 
+export const reqPostLogin = payload => {
+  // Kakao에서 받은 Access Token을 새로운 Access Token으로
+  const { token, user } = payload;
 
-export function reqPostLogin(response) {
   return {
     type: AuthActionType.REQ_POST_LOGIN,
-    payload: response,
-  }
-}
+    payload: {
+      token,
+      user,
+    },
+  };
+};
 
-export function reqPostLogout(response) {
+export const reqPostLogout = payload => {
+  const { token, user } = payload;
+
   return {
     type: AuthActionType.REQ_POST_LOGOUT,
-    payload: response,
-  }
-}
-
-export function reqGetAuth(response) {
-  return {
-    type: AuthActionType.REQ_GET_AUTH,
-    payload: response,
-  }
-}
+    payload: {
+      token,
+      user,
+    },
+  };
+};
