@@ -1,7 +1,7 @@
 import axios from './axios';
 
 export function getWeatherAPI() {
-  return axios.post('/api/weathers').then(r => r.json())
+  return axios.get('/api/weathers').then(r => r.json())
 }
 
 export function postLoginAPI() {
