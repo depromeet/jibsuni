@@ -10,15 +10,12 @@ export async function getAuthAPI(tokenStr) {
       "Authorization": `Bearer ${tokenStr}`
     }
   });
-
   return data;
 }
 
-export async function postLoginAPI() {
-  const { data } = await axios.post('/api/members/login', {
-    
-  });
-  return data;
+export async function postLoginAPI(accessToken) {
+  const { data } = await axios.post('/api/members/login', { accessToken });
+  return data.data;
 }
 
 export function postLogoutAPI() {
