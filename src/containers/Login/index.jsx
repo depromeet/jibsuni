@@ -1,11 +1,11 @@
-import React, { useCallback, useState, useEffect } from 'react';
-import Profile from "../../components/Profile";
+import React from 'react';
+import KakaoLogin from "../../components/KakaoLogin";
 
 const Login = () => {
 
   return (
     <div>
-      <Profile />
+      <KakaoLogin />
     </div>
   );
 };

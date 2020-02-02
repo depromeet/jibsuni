@@ -3,12 +3,8 @@ import { useDispatch } from 'react-redux';
 import { AUTH_TOKEN_STORAGE_KEY } from '../../constants';
 import { reqPostLogin } from '../../store/actions/AuthActions';
 import { postLoginAPI } from "../../utils/api";
-import classnames from 'classnames/bind';
-import styles from './Profile.module.scss';
 
-const cx = classnames.bind(styles);
-
-const Profile = () => {
+const KakaoLogin = () => {
   const dispatch = useDispatch();
   const kakaoKey = `27e4446a9670154714ae75651cd801ca`;
 
@@ -50,4 +46,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default KakaoLogin;
