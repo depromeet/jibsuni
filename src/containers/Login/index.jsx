@@ -1,11 +1,11 @@
 import React from 'react';
-import Profile from "../../components/Profile";
+import KakaoLogin from "../../components/KakaoLogin";
 
 const Login = () => {
+
   return (
     <div>
-      <Profile/>
-      Login
+      <KakaoLogin />
     </div>
   );
 };

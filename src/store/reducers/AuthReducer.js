@@ -1,44 +1,51 @@
-import {AuthActionType} from '../actions/AuthActions'
+import { AUTH_TOKEN_STORAGE_KEY } from '../../constants';
+import { AuthActionType } from '../actions/AuthActions';
 
-const initialState = {
-  isLoggedIn: false,
-  token: '',
-  profile: {
-    id: null,
-    providerType: null,
-    providerUserId: null,
-    createdAt: null,
-    updatedAt: null,
-  }
-};
+export function createInitialCommonState() {
+  const storage = window.localStorage;
 
-export const authReducer = (state = initialState, action) => {
+  return {
+    isCheckingAuth: true,
+    isInitialized: false,
+    token: storage.getItem(AUTH_TOKEN_STORAGE_KEY),
+    user: null
+  };
+}
+
+export function authReducer(state = createInitialCommonState(), action) {
   switch (action.type) {
+    case AuthActionType.CHECK_GET_AUTH: {
+      return {
+        ...state,
+        isCheckingAuth: true
+      };
+    }
+    case AuthActionType.REQ_GET_AUTH: {
+      return {
+        ...state,
+        isInitialized: true,
+        isCheckingAuth: false,
+        user: action.payload.user
+      };
+    }
+
     case AuthActionType.REQ_POST_LOGIN: {
       return {
         ...state,
-        isLoggedIn: true,
-        token: action.payload.data
-      }
+        user: action.payload.user,
+        token: action.payload.token
+      };
     }
 
     case AuthActionType.REQ_POST_LOGOUT: {
       return {
         ...state,
-        isLoggedIn: false,
-        profile: null
-      }
+        user: null,
+        token: null
+      };
     }
 
-    case AuthActionType.REQ_GET_AUTH: {
-      return {
-        ...state,
-        isLoggedIn: true,
-        profile: action.payload.data
-      }
-    }
-
-  default:
-    return state;
+    default:
+      return state;
   }
 };
