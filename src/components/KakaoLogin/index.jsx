@@ -4,9 +4,10 @@ import { AUTH_TOKEN_STORAGE_KEY } from '../../constants';
 import { reqPostLogin } from '../../store/actions/AuthActions';
 import { postLoginAPI } from "../../utils/api";
 
+const kakaoKey = process.env.KAKAO_KEY;
+
 const KakaoLogin = () => {
   const dispatch = useDispatch();
-  const kakaoKey = `27e4446a9670154714ae75651cd801ca`;
 
   const handleKakaoLogin = useCallback(async (accessToken) => {
     try {
@@ -23,7 +24,6 @@ const KakaoLogin = () => {
 
   const onLogin = () => {
     window.Kakao.init(kakaoKey);
-    // 카카오 로그인 버튼 생성
     window.Kakao.Auth.createLoginButton({
       container: '#kakao-login-btn',
       success(authObj) {

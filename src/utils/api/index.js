@@ -1,5 +1,7 @@
 import axios from './axios';
 
+const kakaoAPI = 'https://kapi.kakao.com/v1/';
+
 export function getWeatherAPI() {
   return axios.get('/api/weathers').then(r => r.json())
 }
