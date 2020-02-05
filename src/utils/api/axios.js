@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const host = 'http://jibsuni.depromeet.com/';
+const HOST = 'http://jibsuni.depromeet.com/';
 
 export default axios.create({
-  baseURL: `${host}`,
+  baseURL: `${HOST}`,
   headers: {
     'Content-Type': 'application/json'
   },

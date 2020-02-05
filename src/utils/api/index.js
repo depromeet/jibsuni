@@ -1,7 +1,5 @@
 import axios from './axios';
 
-const kakaoAPI = 'https://kapi.kakao.com/v1/';
-
 export function getWeatherAPI() {
   return axios.get('/api/weathers').then(r => r.json())
 }
@@ -12,11 +10,20 @@ export async function getAuthAPI(tokenStr) {
       "Authorization": `Bearer ${tokenStr}`
     }
   });
-  return data;
+  return data.data.member;
 }
 
 export async function postLoginAPI(accessToken) {
   const { data } = await axios.post('/api/members/login', { accessToken });
+  return data.data;
+}
+
+export async function putProfileAPI(accessToken, nickname) {
+  const { data } = await axios.put('/api/members/me', { "name": nickname }, {
+    headers: {
+      "Authorization": `Bearer ${accessToken}`,
+    }
+  });
   return data.data;
 }
 

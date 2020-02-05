@@ -8,7 +8,7 @@ export function createInitialCommonState() {
     isCheckingAuth: true,
     isInitialized: false,
     token: storage.getItem(AUTH_TOKEN_STORAGE_KEY),
-    user: null
+    user: null,
   };
 }
 
@@ -20,6 +20,7 @@ export function authReducer(state = createInitialCommonState(), action) {
         isCheckingAuth: true
       };
     }
+    
     case AuthActionType.REQ_GET_AUTH: {
       return {
         ...state,

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useSelector } from 'react-redux';
 
 import Count from "../../components/Count";
 import Weather from "../../components/Weather";
@@ -8,13 +9,14 @@ import * as styled from "./style";
 
 function Board() {
   const [navState, setNavState] = useState("all");
+  const user = useSelector(state => state.auth.user);
 
   return(
     <styled.Wrapper>
       <styled.Profile>
         <styled.Title>
           안녕하세요,<br/>
-          <b><span>🧚‍♂️ 빨래수호신</span> 은지님 :)</b>
+          <b><span>🧚‍♂️ 빨래수호신</span> {user != null ? user.name : ''}님 :)</b>
         </styled.Title>
         <img alt={profile} src={profile}/>
       </styled.Profile>

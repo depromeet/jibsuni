@@ -2,17 +2,17 @@ import React, { useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { AUTH_TOKEN_STORAGE_KEY } from '../../constants';
 import { reqPostLogin } from '../../store/actions/AuthActions';
-import { postLoginAPI } from "../../utils/api";
+import { postLoginAPI, putProfileAPI } from "../../utils/api";
 
-const kakaoKey = process.env.KAKAO_KEY;
+const kakaoKey = process.env.REACT_APP_KAKAO_KEY;
 
 const KakaoLogin = () => {
   const dispatch = useDispatch();
 
-  const handleKakaoLogin = useCallback(async (accessToken) => {
+  const handleKakaoLogin = useCallback(async (accessToken, nickname) => {
     try {
-      const { accessToken: token, member } = await postLoginAPI(accessToken);
-      console.log(token, member);
+      const { accessToken: token } = await postLoginAPI(accessToken);
+      const { member } = await putProfileAPI(token, nickname);
 
       localStorage.setItem(AUTH_TOKEN_STORAGE_KEY, token);
       window.Kakao.Auth.setAccessToken(token);
@@ -27,7 +27,15 @@ const KakaoLogin = () => {
     window.Kakao.Auth.createLoginButton({
       container: '#kakao-login-btn',
       success(authObj) {
-        handleKakaoLogin(authObj.access_token);
+        window.Kakao.API.request({
+          url: '/v1/user/me',
+          success: function(res) {
+            handleKakaoLogin(authObj.access_token, res.properties.nickname);
+           },
+           fail: function(error) {
+            alert(JSON.stringify(error));
+           }
+        });
       },
       fail: function (err) {
         alert(JSON.stringify(err));
