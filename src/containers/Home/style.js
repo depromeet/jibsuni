@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Room = styled.div`
-  width: calc(60% - 126px);
+  width: 100%;
   height: 100%;
   border-radius: 10px;
   background-color: #e6f3f3;
