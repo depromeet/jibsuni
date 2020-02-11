@@ -4,7 +4,7 @@ import { AUTH_TOKEN_STORAGE_KEY } from '../../constants';
 import { reqPostLogin } from '../../store/actions/AuthActions';
 import { postLoginAPI } from "../../utils/api";
 
-const kakaoKey = process.env.KAKAO_KEY;
+const kakaoKey = process.env.REACT_APP_KAKAO_KEY;
 
 const KakaoLogin = () => {
   const dispatch = useDispatch();
@@ -41,7 +41,7 @@ const KakaoLogin = () => {
 
   return (
     <div>
-      <a id="kakao-login-btn"></a>
+      <a id="kakao-login-btn"/>
     </div>
   );
 };

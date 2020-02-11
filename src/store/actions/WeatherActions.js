@@ -1,8 +1,8 @@
-// TODO-groovypark: 날씨 상태에 따른 텍스트값 설정
 export const WeatherState = {
-  sunny: {weather: 'sunny', text: '날씨가 좋네요'},
-  rainy: {weather: 'rainy', text: '비가와요 우산 챙기세요'},
-  snow: {weather: 'snow', text: '눈이 옵니다!!'},
+  sunny: {boldText: '오늘은 화창한 날씨예요!', text: '미뤄둔 이불빨래 하는 것은 어떠세요?'},
+  rainy: {boldText: '오늘은 비가 와요 :(', text: '우산 챙기는거 잊지 마세요!'},
+  snow: {boldText: '오늘은 눈이 와요~', text: '따뜻한 이불 속이 최고죠 ><'},
+  default: {boldText: '날씨 정보가 없습니다.', text: '위치 정보 동의를 해주세요.'},
 };
 
 export const WeatherActionType = {
@@ -10,19 +10,33 @@ export const WeatherActionType = {
 };
 
 export function reqGetWeather(response) {
-  let payload = {};
-  // TODO-groovypark: 서버에서 내려주는 날씨 정보에 따른 처리
-  if (response === 'sunny') {
-      payload = { weather: WeatherState.sunny.weather, text: WeatherState.sunny.text}
+  const {data} = response;
+  const { precipitationType } = data;
+
+  switch (precipitationType) {
+    case 'NONE': {
+      return {
+        type: WeatherActionType.REQ_GET_WEATHER,
+        payload: WeatherState.sunny
+      }
+    }
+    case 'RAIN' : {
+      return {
+        type: WeatherActionType.REQ_GET_WEATHER,
+        payload: WeatherState.rainy
+      }
+    }
+    case 'SNOW' : {
+      return {
+        type: WeatherActionType.REQ_GET_WEATHER,
+        payload: WeatherState.snow
+      }
+    }
+    default : {
+      return {
+        type: WeatherActionType.REQ_GET_WEATHER,
+        payload: WeatherState.default
+      }
+    }
   }
-  else if (response === 'rainy') {
-    payload = { weather: WeatherState.rainy.weather, text: WeatherState.rainy.text}
-  }
-  else if (response === 'snow') {
-    payload = { weather: WeatherState.snow.weather, text: WeatherState.snow.text}
-  }
-  return {
-    type: WeatherActionType.REQ_GET_WEATHER,
-    payload,
-  };
 }

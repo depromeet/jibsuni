@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Board from "../Board";
 import Sidebar from "../Sidebar";
 import * as styled from './style'
+import Room from "../Room";
 
 function Home() {
   return (
@@ -10,7 +11,7 @@ function Home() {
       <Header/>
       <styled.Wrapper>
         <Sidebar/>
-        <styled.Room/>
+        <Room/>
         <Board/>
       </styled.Wrapper>
     </>

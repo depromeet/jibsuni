@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="265" height="298" viewBox="0 0 265 298">
+    <defs>
+        <filter id="a" width="112.4%" height="113.9%" x="-6.2%" y="-7%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="15"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0.309803922 0 0 0 0 0.321568627 0 0 0 0.2 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <filter id="b" width="186.5%" height="180.1%" x="-50.8%" y="-50.7%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="15.5"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0.309803922 0 0 0 0 0.321568627 0 0 0 0.2 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <filter id="c" width="299.6%" height="254.5%" x="-99.8%" y="-77.2%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="15"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0.309803922 0 0 0 0 0.321568627 0 0 0 0.2 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <filter id="d" width="448.9%" height="339.7%" x="-174%" y="-119.7%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="15"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0.309803922 0 0 0 0 0.321568627 0 0 0 0.2 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <path id="e" d="M0 .363h14.427v28.236H0z"/>
+        <path id="g" d="M0 .42h14.427v8.338H0z"/>
+        <path id="i" d="M.11.189h9.97V5.95H.11z"/>
+        <path id="k" d="M.282.081H14.71v28.236H.282z"/>
+        <filter id="m" width="1462.1%" height="822.2%" x="-676.5%" y="-359%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="15"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0.309803922 0 0 0 0 0.321568627 0 0 0 0.2 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <path id="n" d="M0 .018h8.334v12.661H0z"/>
+        <path id="p" d="M0 .157h8.334v4.816H0z"/>
+        <filter id="r" width="1462.1%" height="822.2%" x="-676.5%" y="-359%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="15"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0.309803922 0 0 0 0 0.321568627 0 0 0 0.2 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <path id="s" d="M0 .018h8.334v12.661H0z"/>
+        <path id="u" d="M0 .157h8.334v4.816H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" filter="url(#b)" transform="matrix(-1 0 0 1 221.318 42.643)">
+        <path fill="#1B9195" d="M19.666 109.602l-9.832 5.696v72.136l9.832-5.696z"/>
+        <path fill="#B3DADB" d="M118.851 40.828L0 109.601l58.543 33.878 118.852-68.774z"/>
+        <g filter="url(#c)" transform="matrix(-1 0 0 1 100.823 0)">
+            <path fill="#9ACED0" d="M61.183 58.945c0 18.67-13.221 26.192-29.53 16.796C15.345 66.347 2.125 43.597 2.125 24.925c0-18.671 13.22-26.19 29.528-16.797 16.309 9.394 29.53 32.144 29.53 50.817"/>
+            <path fill="#B3DADB" d="M61.183 54.863c0 18.671-13.221 26.192-29.53 16.797C15.345 62.266 2.125 39.516 2.125 20.843c0-18.67 13.22-26.19 29.528-16.796 16.309 9.394 29.53 32.144 29.53 50.816"/>
+            <path fill="#FFF" d="M59.06 56.302c0 18.67-13.222 26.192-29.53 16.796C13.22 63.704 0 40.954 0 22.282 0 3.612 13.22-3.908 29.53 5.486 45.838 14.88 59.06 37.63 59.06 56.302"/>
+            <path fill="#FAFDFD" d="M58.598 56.27c0 18.48-13.085 25.923-29.226 16.625C13.231 63.597.146 41.079.146 22.602.146 4.123 13.231-3.32 29.372 5.976c16.141 9.298 29.226 31.816 29.226 50.295"/>
+            <path fill="#E5F2F3" d="M57.004 55.353c0 17.47-12.37 24.51-27.631 15.717C14.113 62.28 1.74 40.99 1.74 23.52 1.74 6.049 14.112-.99 29.373 7.8c15.26 8.79 27.631 30.081 27.631 47.552"/>
+            <path fill="#B3DADB" d="M31.11 70.234c-15.26-8.79-27.633-30.08-27.633-47.552 0-8.695 3.064-14.805 8.024-17.666-5.971 2.362-9.76 8.834-9.76 18.503 0 17.471 12.37 38.762 27.63 47.552 7.667 4.415 14.603 4.836 19.61 1.948-4.819 1.908-11.057 1.14-17.871-2.785"/>
+        </g>
+        <g filter="url(#d)" transform="matrix(-1 0 0 1 55.071 48.182)">
+            <g transform="translate(0 8.264)">
+                <mask id="f" fill="#fff">
+                    <use xlink:href="#e"/>
+                </mask>
+                <path fill="#CCE7E8" d="M14.427.363V24.43c.006 1.068-.692 2.134-2.096 2.948-2.808 1.628-7.375 1.628-10.201 0C.717 26.564.006 25.498 0 24.43V.363h14.427z" mask="url(#f)"/>
+            </g>
+            <g transform="translate(0 4.038)">
+                <mask id="h" fill="#fff">
+                    <use xlink:href="#g"/>
+                </mask>
+                <path fill="#E5F2F3" d="M12.298 1.642c2.826 1.628 2.841 4.267.033 5.896C9.523 9.165 4.956 9.165 2.13 7.537-.696 5.909-.712 3.27 2.095 1.642c2.81-1.629 7.377-1.628 10.203 0" mask="url(#h)"/>
+            </g>
+            <path fill="#B3DADB" d="M0 12.155c.006 1.067.717 2.134 2.13 2.948 1.413.813 3.261 1.22 5.107 1.22v14.54c-1.846 0-3.694-.408-5.107-1.222C.717 28.827.006 27.761 0 26.694V12.155z"/>
+            <path fill="#02858A" d="M12.198 3.303V6.58c.004.738-.478 1.475-1.448 2.037-1.94 1.125-5.096 1.125-7.05 0-.976-.562-1.466-1.3-1.47-2.037V3.303h9.968z"/>
+            <g transform="translate(2.118 .234)">
+                <mask id="j" fill="#fff">
+                    <use xlink:href="#i"/>
+                </mask>
+                <path fill="#4DA9AD" d="M8.608 1.033c1.953 1.124 1.964 2.948.024 4.074-1.94 1.124-5.097 1.124-7.05 0C-.37 3.981-.38 2.156 1.56 1.032c1.94-1.126 5.097-1.125 7.05 0" mask="url(#j)"/>
+            </g>
+            <path fill="#CCE7E8" d="M24.735 15.671V39.74c.007 1.067-.692 2.134-2.096 2.948-2.807 1.627-7.375 1.627-10.201 0-1.413-.815-2.123-1.881-2.13-2.948V15.67h14.427z"/>
+            <path fill="#E5F2F3" d="M22.606 12.723c2.826 1.628 2.841 4.268.033 5.896-2.808 1.628-7.375 1.627-10.201 0-2.826-1.628-2.842-4.268-.035-5.896 2.81-1.628 7.377-1.628 10.203 0"/>
+            <path fill="#B3DADB" d="M10.308 19.2c.007 1.066.717 2.133 2.13 2.947 1.413.813 3.262 1.22 5.107 1.22v14.54c-1.845 0-3.694-.408-5.107-1.222-1.413-.813-2.123-1.88-2.13-2.947V19.199z"/>
+            <path fill="#02858A" d="M22.506 10.347v3.276c.005.738-.478 1.475-1.448 2.037-1.94 1.125-5.096 1.125-7.05 0-.975-.562-1.466-1.3-1.47-2.037v-3.276h9.968z"/>
+            <path fill="#4DA9AD" d="M21.034 8.31c1.953 1.125 1.964 2.95.024 4.075-1.94 1.124-5.096 1.124-7.049 0-1.952-1.126-1.964-2.95-.024-4.074 1.94-1.125 5.097-1.125 7.05 0"/>
+            <g transform="translate(20.334 22.634)">
+                <mask id="l" fill="#fff">
+                    <use xlink:href="#k"/>
+                </mask>
+                <path fill="#CCE7E8" d="M14.71.081V24.15c.006 1.067-.693 2.134-2.097 2.948-2.807 1.628-7.375 1.627-10.2 0-1.414-.815-2.124-1.881-2.13-2.948V.08h14.426z" mask="url(#l)"/>
+            </g>
+            <path fill="#E5F2F3" d="M32.914 19.768c2.826 1.628 2.842 4.267.033 5.895-2.808 1.628-7.375 1.628-10.2 0-2.827-1.628-2.843-4.267-.035-5.895 2.809-1.629 7.376-1.629 10.202 0"/>
+            <path fill="#B3DADB" d="M20.617 26.243c.006 1.067.716 2.134 2.13 2.948 1.412.814 3.26 1.22 5.106 1.221v14.539c-1.845 0-3.694-.407-5.107-1.221-1.413-.814-2.123-1.881-2.13-2.948V26.243z"/>
+            <path fill="#02858A" d="M32.815 17.391v3.276c.004.738-.479 1.475-1.45 2.038-1.94 1.125-5.095 1.124-7.048 0-.976-.563-1.467-1.3-1.471-2.038v-3.276h9.969z"/>
+            <path fill="#4DA9AD" d="M31.343 15.355c1.952 1.125 1.963 2.949.023 4.074-1.94 1.124-5.096 1.124-7.049 0-1.952-1.125-1.964-2.95-.024-4.074 1.941-1.125 5.097-1.125 7.05 0"/>
+        </g>
+        <g filter="url(#m)" transform="matrix(-1 0 0 1 39.82 82.84)">
+            <g transform="translate(0 3.907)">
+                <mask id="o" fill="#fff">
+                    <use xlink:href="#n"/>
+                </mask>
+                <path fill="#CCE7E8" d="M8.334.04l-.025 10.243c-.001.613-.405 1.224-1.21 1.69-1.622.941-4.231.942-5.864.001C.414 11.501.004 10.88.005 10.26L0 .018c-.002.62.408 1.24 1.23 1.714 1.632.94 4.27.94 5.893 0C7.93 1.264 8.332.652 8.333.04" mask="url(#o)"/>
+            </g>
+            <g transform="translate(0 1.371)">
+                <mask id="q" fill="#fff">
+                    <use xlink:href="#p"/>
+                </mask>
+                <path fill="#E5F2F3" d="M7.104.862c1.632.94 1.64 2.465.019 3.405-1.622.94-4.26.941-5.893 0C-.403 3.328-.41 1.804 1.21.863c1.622-.94 4.26-.94 5.893 0" mask="url(#q)"/>
+            </g>
+            <path fill="#02858A" d="M5.982 2.537c-1.001.58-2.63.58-3.637 0-.506-.292-.76-.675-.759-1.058l-.004 1.76c.051.337.3.666.748.924 1.008.58 2.636.58 3.637 0 .497-.289.746-.666.747-1.044l.003-1.492c-.052.331-.296.656-.735.91"/>
+            <path fill="#4DA9AD" d="M5.97.435c1.008.58 1.013 1.521.012 2.102-1.001.58-2.63.58-3.637 0-1.008-.58-1.012-1.521-.011-2.102 1-.58 2.628-.58 3.636 0"/>
+            <path fill="#02858A" d="M8.31 11.056c-.002.613-.405 1.224-1.21 1.69-1.623.942-4.232.942-5.865.002-.821-.474-1.231-1.095-1.23-1.715v-4.75c-.001.62.409 1.242 1.23 1.715 1.633.94 4.242.94 5.864 0 .806-.467 1.209-1.079 1.21-1.691v4.75z"/>
+        </g>
+        <g filter="url(#r)" transform="matrix(-1 0 0 1 45.752 86.22)">
+            <g transform="translate(0 3.907)">
+                <mask id="t" fill="#fff">
+                    <use xlink:href="#s"/>
+                </mask>
+                <path fill="#CCE7E8" d="M8.334.04l-.025 10.243c-.001.613-.405 1.224-1.21 1.69-1.622.941-4.231.942-5.864.001C.414 11.501.004 10.88.005 10.26L0 .018c-.002.62.408 1.24 1.23 1.714 1.632.94 4.27.94 5.893 0C7.93 1.264 8.332.652 8.333.04" mask="url(#t)"/>
+            </g>
+            <g transform="translate(0 1.371)">
+                <mask id="v" fill="#fff">
+                    <use xlink:href="#u"/>
+                </mask>
+                <path fill="#E5F2F3" d="M7.104.862c1.632.94 1.64 2.465.019 3.405-1.622.94-4.26.941-5.893 0C-.403 3.328-.41 1.804 1.21.863c1.622-.94 4.26-.94 5.893 0" mask="url(#v)"/>
+            </g>
+            <path fill="#02858A" d="M5.982 2.537c-1.001.58-2.63.58-3.637 0-.506-.292-.76-.675-.759-1.058l-.004 1.76c.051.337.3.666.748.924 1.008.58 2.636.58 3.637 0 .497-.289.746-.666.747-1.044l.003-1.492c-.052.331-.296.656-.735.91"/>
+            <path fill="#4DA9AD" d="M5.97.435c1.008.58 1.013 1.521.012 2.102-1.001.58-2.63.58-3.637 0-1.008-.58-1.012-1.521-.011-2.102 1-.58 2.628-.58 3.636 0"/>
+            <path fill="#02858A" d="M8.31 11.056c-.002.613-.405 1.224-1.21 1.69-1.623.942-4.232.942-5.865.002-.821-.474-1.231-1.095-1.23-1.715v-4.75c-.001.62.409 1.242 1.23 1.715 1.633.94 4.242.94 5.864 0 .806-.467 1.209-1.079 1.21-1.691v4.75z"/>
+        </g>
+        <path fill="#9ACED0" d="M0 145.671v36.067l9.833 5.696V151.36l38.877 22.497v36.06l9.833 5.697v-72.136l-9.833-5.696v.007L0 109.602z"/>
+        <path fill="#1B9195" d="M167.346 80.52l.195.112v72.136l-9.834-5.697V86.097z"/>
+        <path fill="#4DA9AD" d="M167.54 80.632v72.136l9.833-5.697V74.936z"/>
+        <path fill="#4DA9AD" d="M68.376 137.789v-.006l-9.833 5.695v72.136l9.833-5.697v-36.06l109.019-63.086V74.704z"/>
+        <path fill="#9ACED0" d="M67.859 146.775l48.213-27.925v20.214l-48.213 28.019z"/>
+        <path fill="#1B9195" d="M94.376 141.882c0 1.328-1.08 2.89-2.41 3.49-1.332.6-2.411.009-2.411-1.319 0-1.329 1.079-2.892 2.411-3.491 1.332-.6 2.41-.008 2.41 1.32"/>
+        <path fill="#9ACED0" d="M119.245 117.15l48.213-27.925v20.214l-48.213 28.019z"/>
+        <path fill="#1B9195" d="M145.762 112.257c0 1.327-1.08 2.89-2.41 3.49-1.333.6-2.412.008-2.412-1.32 0-1.329 1.079-2.891 2.412-3.49 1.33-.6 2.41-.01 2.41 1.32"/>
+    </g>
+</svg>
