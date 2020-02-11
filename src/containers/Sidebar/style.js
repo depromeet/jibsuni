@@ -17,4 +17,5 @@ export const Img = styled.img`
   position: absolute;
   bottom: 113px;
   left: 38px;
+  cursor: pointer;
 `;
