@@ -30,3 +30,13 @@ export async function putProfileAPI(accessToken, nickname) {
 export function postLogoutAPI() {
   return axios.post('/api/members/logout').then(r => r.json())
 }
+
+export async function getRoomsAPI(accessToken) {
+  const { data } = await axios.get('/api/rooms', {
+    headers: {
+      "Authorization": `Bearer ${accessToken}`,
+    }
+  });
+  console.log(data);
+  return data;
+}
