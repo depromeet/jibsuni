@@ -49,7 +49,7 @@ const KakaoLogin = () => {
 
   return (
     <div>
-      <a id="kakao-login-btn"></a>
+      <a id="kakao-login-btn"/>
     </div>
   );
 };
