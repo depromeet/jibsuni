@@ -5,6 +5,11 @@ export const Wrapper = styled.div`
   
   & > span {
     width: max-content;
+    font-size: 18px;
+    font-weight: 300;
+    color: #a5adbb;
+    min-width: 100px;
+    display: block;
   } 
 `;
 

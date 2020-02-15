@@ -43,3 +43,54 @@ export const WeatherWrapper = styled.div`
 export const NavBarWrapper = styled.div`
   display: flex;
 `;
+
+export const TodoList = styled.ul`
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+`;
+
+export const TodoItem = styled.li`
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  min-height: 90px;
+  box-sizing: border-box;
+`;
+
+export const Number = styled.div`
+  flex: none;
+  margin-right: 18px;
+  font-size: 18.2px;
+  font-weight: bold;
+  line-height: 1.64;
+  text-align: center;
+  color: #383b41;
+`;
+
+export const CheckImage = styled.img` 
+  flex: none;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+`;
+
+export const Label = styled.span`
+  margin-right: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 2;
+  color: #383b41;
+`;
+
+export const TodoContent = styled.span`
+  flex: 1 1 auto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #777777;
+  text-decoration: ${p => p.complete ? 'line-through' : 'none'};
+`;

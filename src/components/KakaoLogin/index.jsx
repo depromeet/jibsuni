@@ -4,6 +4,9 @@ import { AUTH_TOKEN_STORAGE_KEY } from '../../constants';
 import { reqPostLogin } from '../../store/actions/AuthActions';
 import { postLoginAPI, putProfileAPI } from "../../utils/api";
 
+import loginBtn from '../../images/btn-login.svg';
+import * as styled from "./style";
+
 const kakaoKey = process.env.REACT_APP_KAKAO_KEY;
 
 const KakaoLogin = () => {
@@ -24,8 +27,7 @@ const KakaoLogin = () => {
 
   const onLogin = () => {
     window.Kakao.init(kakaoKey);
-    window.Kakao.Auth.createLoginButton({
-      container: '#kakao-login-btn',
+    window.Kakao.Auth.login({
       success(authObj) {
         window.Kakao.API.request({
           url: '/v1/user/me',
@@ -43,14 +45,10 @@ const KakaoLogin = () => {
     });
   };
 
-  useEffect(() => {
-    onLogin();
-  }, []);
-
   return (
-    <div>
-      <a id="kakao-login-btn"/>
-    </div>
+    <styled.LoginBtn id="custom-login-btn" onClick={onLogin}>
+      <img alt={loginBtn} src={loginBtn}/>
+    </styled.LoginBtn>
   );
 };
 
