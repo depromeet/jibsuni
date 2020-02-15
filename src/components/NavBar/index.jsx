@@ -3,10 +3,11 @@ import React from 'react';
 import * as styled from "./style";
 
 function NavBar({
-  title
+  title,
+  isActive,
 }) {
   return (
-    <styled.Wrapper>
+    <styled.Wrapper isActive={isActive}>
       {title}
     </styled.Wrapper>
   )

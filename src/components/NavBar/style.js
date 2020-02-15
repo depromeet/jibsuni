@@ -13,4 +13,10 @@ export const Wrapper = styled.div`
     border-bottom: 2px solid #616d86;
     cursor: pointer;
   }
+
+  ${p => p.isActive ? `
+    font-weight: bold;
+    color: #383b41;
+    border-bottom: 2px solid #616d86;
+  ` : ''};
 `;
