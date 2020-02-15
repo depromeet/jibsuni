@@ -6,5 +6,5 @@ import {roomReducer} from './RoomReducer';
 export default combineReducers({
   weatherReducer,
   auth: authReducer,
-  roomReducer
+  room: roomReducer
 });

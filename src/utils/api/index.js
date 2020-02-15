@@ -52,7 +52,6 @@ export async function getRoomsAPI(accessToken) {
       "Authorization": `Bearer ${accessToken}`,
     }
   });
-  console.log(data);
   return data;
 }
 

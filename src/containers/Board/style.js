@@ -81,7 +81,6 @@ export const Label = styled.span`
   margin-right: 6px;
   font-size: 16px;
   font-weight: bold;
-  line-height: 2;
   color: #383b41;
 `;
 

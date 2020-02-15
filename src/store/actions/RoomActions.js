@@ -1,15 +1,16 @@
 export const RoomActionType = {
-    REQ_GET_AUTH: 'room/REQ_GET_ROOM'
-  };
+  GET_ROOMS: 'room/GET_ROOMS',
+  SELECT_ROOM: 'room/SELECT_ROOM',
+};
 
-  export const reqGetRoom = payload => {
-    const { roomId } = payload;
+export const getRoomsAction = payload => ({
+  type: RoomActionType.GET_ROOMS,
+  payload,
+});
 
-    return {
-      type: RoomActionType.REQ_GET_ROOM,
-      payload: {
-        roomId
-      }
-    };
-  };
-  
+export const selectRoomAction = roomId => ({
+  type: RoomActionType.SELECT_ROOM,
+  payload: {
+    roomId,
+  },
+});

@@ -5,9 +5,10 @@ import * as styled from "./style";
 function NavBar({
   title,
   isActive,
+  onClick,
 }) {
   return (
-    <styled.Wrapper isActive={isActive}>
+    <styled.Wrapper isActive={isActive} onClick={onClick}>
       {title}
     </styled.Wrapper>
   )
