@@ -1,6 +1,7 @@
 import axios from './axios';
 import {AUTH_TOKEN_STORAGE_KEY} from "../../constants";
 
+
 const kakaoAPI = 'https://kapi.kakao.com/v1/';
 
 export async function getWeatherAPI(latitude, longitude) {
@@ -23,7 +24,7 @@ export async function getAuthAPI(tokenStr) {
       "Authorization": `Bearer ${tokenStr}`
     }
   });
-  return data;
+  return data.data.member;
 }
 
 export async function postLoginAPI(accessToken) {
@@ -31,8 +32,28 @@ export async function postLoginAPI(accessToken) {
   return data.data;
 }
 
+export async function putProfileAPI(accessToken, nickname) {
+  const { data } = await axios.put('/api/members/me', { "name": nickname }, {
+    headers: {
+      "Authorization": `Bearer ${accessToken}`,
+    }
+  });
+  return data.data;
+}
+
 export function postLogoutAPI() {
   return axios.post('/api/members/logout').then(r => r.json())
+}
+
+
+export async function getRoomsAPI(accessToken) {
+  const { data } = await axios.get('/api/rooms', {
+    headers: {
+      "Authorization": `Bearer ${accessToken}`,
+    }
+  });
+  console.log(data);
+  return data;
 }
 
 export async function getFurnitures(roomId, page, size) {

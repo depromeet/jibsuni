@@ -27,7 +27,7 @@ function Root() {
   const user = useSelector(state => state.auth.user);
   const loading = useSelector(state => state.auth.isCheckingAuth);
 
-  console.log(tokenStr, user);
+  console.log('user', user);
 
   useEffect(() => {
     if (!isInitialized) {
