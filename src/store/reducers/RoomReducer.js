@@ -2,20 +2,26 @@ import { RoomActionType } from '../actions/RoomActions';
 
 export function createInitialCommonState() {
   return {
-    roomId: null
+    rooms: [],
+    selectedRoomId: null,
   };
 }
 
 export function roomReducer(state = createInitialCommonState(), action) {
   switch (action.type) {
-    case RoomActionType.REQ_GET_ROOM: {
+    case RoomActionType.GET_ROOMS: {
       return {
         ...state,
-        roomId: true
+        rooms: [{ id: 'ALL', type: 'all' }, ...action.payload.rooms],
+        selectedRoomId: 'ALL',
       };
     }
-    
+    case RoomActionType.SELECT_ROOM:
+      return {
+        ...state,
+        selectedRoomId: action.payload.roomId,
+      };
     default:
       return state;
   }
-};
+}
