@@ -46,12 +46,33 @@ export function postLogoutAPI() {
 }
 
 
-export async function getRoomsAPI(accessToken) {
+export async function getRoomsAPI(token) {
   const { data } = await axios.get('/api/rooms', {
     headers: {
-      "Authorization": `Bearer ${accessToken}`,
+      "Authorization": `Bearer ${token}`,
     }
   });
+  console.log(data);
+  return data;
+}
+
+export async function getTasksAPI(token) {
+    const { data } = await axios.get(`/api/tasks`, {
+      headers: {
+        "Authorization": `Bearer ${token}`,
+      }
+    });
+    console.log(data);
+    return data;
+  }
+
+export async function getRoomTasksAPI(token, roomId) {
+  const { data } = await axios.get(`/api/rooms/${roomId}/tasks`, {
+    headers: {
+      "Authorization": `Bearer ${token}`,
+    }
+  });
+  console.log(data);
   return data;
 }
 

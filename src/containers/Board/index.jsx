@@ -8,7 +8,7 @@ import profile from '../../images/profile.svg';
 import * as styled from './style';
 import checkOff from '../../images/ico-check-off.svg';
 import checkOn from '../../images/ico-check-on.svg';
-import { getRoomsAPI } from '../../utils/api';
+import { getRoomsAPI, getTasksAPI, getRoomTasksAPI } from '../../utils/api';
 import { getRoomsAction, selectRoomAction } from '../../store/actions/RoomActions';
 import { roomNameByType } from '../../constants/roomType';
 
@@ -18,7 +18,7 @@ function Board() {
   const token = useSelector(state => state.auth.token);
   const rooms = useSelector(state => state.room.rooms);
   const selectedRoomId = useSelector(state => state.room.selectedRoomId);
-
+  
   const handleNavClick = useCallback(
     room => {
       dispatch(selectRoomAction(room.id));
@@ -38,6 +38,9 @@ function Board() {
         }),
       );
     });
+
+    getTasksAPI(token);
+    getRoomTasksAPI(token, '38714618882844401');
   }, [token, rooms, dispatch]);
 
   return (
