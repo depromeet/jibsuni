@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
 export const Count = styled.div`
   display: flex;
   margin-top: 10px;
+  line-height: 1;
   
   & > span {
     width: max-content;

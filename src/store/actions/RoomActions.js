@@ -1,6 +1,7 @@
 export const RoomActionType = {
   GET_ROOMS: 'room/GET_ROOMS',
   SELECT_ROOM: 'room/SELECT_ROOM',
+  GET_SELECT_ROOM_TASKS: 'room/GET_SELECT_ROOM_TASKS',
 };
 
 export const getRoomsAction = payload => ({
@@ -14,3 +15,9 @@ export const selectRoomAction = roomId => ({
     roomId,
   },
 });
+
+export const getSelectRoomTasksAction = payload => ({
+  type: RoomActionType.GET_SELECT_ROOM_TASKS,
+  payload,
+});
+

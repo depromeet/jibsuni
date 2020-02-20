@@ -1,9 +1,6 @@
 import axios from './axios';
 import {AUTH_TOKEN_STORAGE_KEY} from "../../constants";
 
-
-const kakaoAPI = 'https://kapi.kakao.com/v1/';
-
 export async function getWeatherAPI(latitude, longitude) {
   const token = localStorage.getItem(AUTH_TOKEN_STORAGE_KEY);
   const { data } = await axios.get('/api/weathers', {
@@ -46,12 +43,33 @@ export function postLogoutAPI() {
 }
 
 
-export async function getRoomsAPI(accessToken) {
+export async function getRoomsAPI(token) {
   const { data } = await axios.get('/api/rooms', {
     headers: {
-      "Authorization": `Bearer ${accessToken}`,
+      "Authorization": `Bearer ${token}`,
     }
   });
+  console.log(data);
+  return data;
+}
+
+export async function getTasksAPI(token) {
+    const { data } = await axios.get(`/api/tasks`, {
+      headers: {
+        "Authorization": `Bearer ${token}`,
+      }
+    });
+    console.log(data);
+    return data;
+  }
+
+export async function getRoomTasksAPI(token, roomId) {
+  const { data } = await axios.get(`/api/rooms/${roomId}/tasks`, {
+    headers: {
+      "Authorization": `Bearer ${token}`,
+    }
+  });
+  console.log(data);
   return data;
 }
 

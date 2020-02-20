@@ -21,9 +21,9 @@ function Sidebar() {
     <styled.Wrapper>
       <styled.ButtonWrapper>
         {rooms.map(room => (
-          <div key={room.id} onClick={() => handleRoomClick(room)}>
+          <styled.SideBtn key={room.id} isActive={room.id === selectedRoomId} onClick={() => handleRoomClick(room)}>
             {roomNameByType[room.type]}
-          </div>
+          </styled.SideBtn>
         ))}
         <styled.Img src={plus} />
       </styled.ButtonWrapper>

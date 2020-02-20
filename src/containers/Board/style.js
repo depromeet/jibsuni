@@ -26,7 +26,7 @@ export const TotalCount = styled.div`
   margin-top: 40px;
   
   #middle {
-    margin: 0 114px;
+    margin: 0 85px;
   }
 `;
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  height: 52px;
+  height: 60px;
   display: flex;
   padding: 28px 0 0 44px;
   font-size: 2em;
@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 42px;
-  height: 44px;
+  width: 199px;
+  height: 50px;
   margin-right: 40px;
 `;
