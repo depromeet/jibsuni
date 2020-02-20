@@ -1,9 +1,6 @@
 import axios from './axios';
 import {AUTH_TOKEN_STORAGE_KEY} from "../../constants";
 
-
-const kakaoAPI = 'https://kapi.kakao.com/v1/';
-
 export async function getWeatherAPI(latitude, longitude) {
   const token = localStorage.getItem(AUTH_TOKEN_STORAGE_KEY);
   const { data } = await axios.get('/api/weathers', {
