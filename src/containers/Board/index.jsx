@@ -9,7 +9,7 @@ import * as styled from './style';
 import checkOff from '../../images/ico-check-off.svg';
 import checkOn from '../../images/ico-check-on.svg';
 import { getRoomsAPI, getTasksAPI, getRoomTasksAPI } from '../../utils/api';
-import { getRoomsAction, selectRoomAction } from '../../store/actions/RoomActions';
+import { getRoomsAction, selectRoomAction, getSelectRoomTasksAction } from '../../store/actions/RoomActions';
 import { roomNameByType } from '../../constants/roomType';
 
 function Board() {
@@ -17,14 +17,33 @@ function Board() {
   const user = useSelector(state => state.auth.user);
   const token = useSelector(state => state.auth.token);
   const rooms = useSelector(state => state.room.rooms);
+  const tasks = useSelector(state => state.room.tasks);
   const selectedRoomId = useSelector(state => state.room.selectedRoomId);
-  
-  const handleNavClick = useCallback(
-    room => {
+
+  const handleNavClick = useCallback(async (room) => {
+    try {
       dispatch(selectRoomAction(room.id));
-    },
-    [dispatch],
-  );
+      if(room.id == 'ALL'){
+        getTasksAPI(token).then(result => {
+          dispatch(
+            getSelectRoomTasksAction({
+              tasks: result.data,
+            }),
+          );
+        });
+      }else{
+        getRoomTasksAPI(token, room.id).then(result => {
+          dispatch(
+            getSelectRoomTasksAction({
+              tasks: result.data,
+            }),
+          );
+        });
+      } 
+    } catch (error) {
+      console.error(error);
+    }
+  }, [dispatch]);
 
   useEffect(() => {
     if (rooms.length > 0) {
@@ -39,9 +58,16 @@ function Board() {
       );
     });
 
-    getTasksAPI(token);
-    getRoomTasksAPI(token, '38714618882844401');
-  }, [token, rooms, dispatch]);
+    getTasksAPI(token).then(result => {
+      dispatch(
+        getSelectRoomTasksAction({
+          tasks: result.data,
+        }),
+      );
+    });
+  }, [token, rooms, tasks, dispatch]);
+
+  console.log(rooms);
 
   return (
     <styled.Wrapper>
@@ -56,7 +82,7 @@ function Board() {
         <img alt={profile} src={profile} />
       </styled.Profile>
       <styled.TotalCount>
-        <Count title="해야하는 일" count={15} />
+        <Count title="전체 일정" count={tasks.length} />
         <div id="middle">
           <Count title="완료 일정" count={2} />
         </div>
@@ -75,22 +101,23 @@ function Board() {
           />
         ))}
       </styled.NavBarWrapper>
-      <styled.TodoList>
-        <styled.TodoItem>
-          <styled.Number>1</styled.Number>
-          <styled.CheckImage src={checkOff} />
-          <styled.Label>침실</styled.Label>
-          <styled.TodoContent complete={true}>일어나자 마자 이부자리 정리하기</styled.TodoContent>
-        </styled.TodoItem>
-        <styled.TodoItem>
-          <styled.Number>2</styled.Number>
-          <styled.CheckImage src={checkOn} />
-          <styled.Label>침실</styled.Label>
-          <styled.TodoContent complete={false}>
-            오늘 운동 안하면 내가 사람이 아니다.
-          </styled.TodoContent>
-        </styled.TodoItem>
-      </styled.TodoList>
+      {
+        tasks.length == 0?
+        <styled.TodoList>
+          할 일이 없어요 :(
+        </styled.TodoList>
+        :
+        <styled.TodoList>
+          {tasks.map((task, i) => (
+            <styled.TodoItem key={task.id}>
+              <styled.Number>{i+1}</styled.Number>
+              <styled.CheckImage src={checkOff} />
+              <styled.Label>{task.furnitureName}</styled.Label>
+              <styled.TodoContent complete={true}>{task.contents}</styled.TodoContent>
+            </styled.TodoItem>
+          ))}
+        </styled.TodoList>
+      }
     </styled.Wrapper>
   );
 }
