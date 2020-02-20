@@ -30,7 +30,7 @@ const KakaoLogin = () => {
     window.Kakao.Auth.login({
       success(authObj) {
         window.Kakao.API.request({
-          url: '/v1/user/me',
+          url: '/v2/user/me',
           success: function(res) {
             handleKakaoLogin(authObj.access_token, res.properties.nickname);
            },
