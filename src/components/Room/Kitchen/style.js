@@ -67,4 +67,3 @@ export const KitchenTrashcan = styled.img`
     cursor: pointer;
   }
 `;
-

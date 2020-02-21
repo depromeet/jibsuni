@@ -1,4 +1,5 @@
 import React from 'react';
+import * as styled from './style'
 import bedroom from '../../../images/bedroom.svg'
 import bedroomBedOff from '../../../images/bedroom-bed-off.svg'
 import bedroomTrashcanOff from '../../../images/bedroom-trashcan-off.svg'
@@ -10,9 +11,8 @@ import bedroomTrashcanOn from '../../../images/bedroom-trashcan-on.svg'
 import bedroomDressingtableOn from '../../../images/bedroom-dressingtable-on.svg'
 import bedroomDeskOn from '../../../images/bedroom-desk-on.svg'
 import bedroomClothesOn from '../../../images/bedroom-clothes-on.svg'
-import * as styled from './style'
 
-function Room() {
+function Bedroom() {
   return (
     <styled.Room>
       <styled.Bedroom src={bedroom}/>
@@ -45,4 +45,4 @@ function Room() {
   )
 }
 
-export default Room
+export default Bedroom;

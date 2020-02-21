@@ -1,13 +1,13 @@
 import React from 'react';
+import * as styled from './style'
 import bathroom from '../../../images/bathroom.svg'
 import bathroomBasinOff from '../../../images/bathroom-basin-off.svg'
 import bathroomShowerOff from '../../../images/bathroom-shower-off.svg'
 import bathroomToiletOff from '../../../images/bathroom-toilet-off.svg'
 import bathroomTrashcanOff from '../../../images/bathroom-trashcan-off.svg'
 import bathroomWashingmachineOff from '../../../images/bathroom-washingmachine-off.svg'
-import * as styled from './style'
 
-function Room() {
+function Bathroom() {
   return (
     <styled.Room>
       <styled.Bathroom src={bathroom}/>
@@ -20,4 +20,5 @@ function Room() {
   )
 }
 
-export default Room
+export default Bathroom;
+

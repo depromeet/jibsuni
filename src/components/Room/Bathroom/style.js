@@ -67,4 +67,3 @@ export const BathroomWashingmachine = styled.img`
     cursor: pointer;
   }
 `;
-

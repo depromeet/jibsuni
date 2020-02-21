@@ -1,13 +1,13 @@
 import React from 'react';
+import * as styled from './style'
 import kitchen from '../../../images/kitchen.svg'
 import kitchenOvenOff from '../../../images/kitchen-oven-off.svg'
 import kitchenRefrigeratorOff from '../../../images/kitchen-refrigerator-off.svg'
 import kitchenSinkOff from '../../../images/kitchen-sink-off.svg'
 import kitchenTableOff from '../../../images/kitchen-table-off.svg'
 import kitchenTrashcanOff from '../../../images/kitchen-trashcan-off.svg'
-import * as styled from './style'
 
-function Room() {
+function Kitchen() {
   return (
     <styled.Room>
       <styled.Kitchen src={kitchen}/>
@@ -20,4 +20,4 @@ function Room() {
   )
 }
 
-export default Room
+export default Kitchen;

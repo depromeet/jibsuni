@@ -2,6 +2,7 @@ export const RoomActionType = {
   GET_ROOMS: 'room/GET_ROOMS',
   SELECT_ROOM: 'room/SELECT_ROOM',
   GET_SELECT_ROOM_TASKS: 'room/GET_SELECT_ROOM_TASKS',
+  COUNT_ROOM_TASKS: 'room/COUNT_ROOM_TASKS',
 };
 
 export const getRoomsAction = payload => ({
@@ -9,11 +10,9 @@ export const getRoomsAction = payload => ({
   payload,
 });
 
-export const selectRoomAction = roomId => ({
+export const selectRoomAction = payload => ({
   type: RoomActionType.SELECT_ROOM,
-  payload: {
-    roomId,
-  },
+  payload,
 });
 
 export const getSelectRoomTasksAction = payload => ({
@@ -21,3 +20,9 @@ export const getSelectRoomTasksAction = payload => ({
   payload,
 });
 
+export const countRoomTasksAction = totalCount => ({
+  type: RoomActionType.COUNT_ROOM_TASKS,
+  payload: {
+    totalCount,
+  },
+});
