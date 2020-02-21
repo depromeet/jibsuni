@@ -1,24 +1,27 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTasksAPI, getRoomTasksAPI } from '../../utils/api';
-import { selectRoomAction, getSelectRoomTasksAction, countRoomTasksAction } from '../../store/actions/RoomActions';
+import { selectRoomAction, getSelectRoomTasksAction } from '../../store/actions/RoomActions';
 import { roomNameByType } from '../../constants/roomType';
 
-import Dialog from '../../components/Dialog';
-import CreateTask from '../CreateTask';
 import * as styled from './style';
 import plus from '../../images/plus.svg';
+import icoAllOff from '../../images/ico-all-off.svg';
+import icoLivingroomOff from '../../images/ico-livingroom-off.svg';
+import icoBedroomOff from '../../images/ico-bedroom-off.svg';
+import icoKitchenOff from '../../images/ico-kitchen-off.svg';
+import icoBathroomOff from '../../images/ico-bathroom-off.svg';
+import icoAllOn from '../../images/ico-all-on.svg';
+import icoLivingroomOn from '../../images/ico-livingroom-on.svg';
+import icoBedroomOn from '../../images/ico-bedroom-on.svg';
+import icoKitchenOn from '../../images/ico-kitchen-on.svg';
+import icoBathroomOn from '../../images/ico-bathroom-on.svg';
 
 function Sidebar() {
   const dispatch = useDispatch();
   const token = useSelector(state => state.auth.token);
   const rooms = useSelector(state => state.room.rooms);
   const selectedRoomId = useSelector(state => state.room.selectedRoomId);
-
-  const [show, setShow] = useState(false);
-  const handleClick = useCallback(() => {
-    setShow(prev => !prev);
-  }, []);
 
   const handleNavClick = useCallback(async (room) => {
     try {
@@ -53,15 +56,37 @@ function Sidebar() {
       <styled.ButtonWrapper>
         {rooms.map(room => (
           <styled.SideBtn key={room.id} isActive={room.id === selectedRoomId} onClick={() => handleNavClick(room)}>
-            {roomNameByType[room.type]}
+            {/* {roomNameByType[room.type]} */}
+            <styled.Img 
+              src={icoAllOff}
+              onMouseOver={e => (e.currentTarget.src = icoAllOn)}
+              onMouseOut={e => (e.currentTarget.src = icoAllOff)}
+            />
+            <styled.Img 
+              src={icoLivingroomOff}
+              onMouseOver={e => (e.currentTarget.src = icoLivingroomOn)}
+              onMouseOut={e => (e.currentTarget.src = icoLivingroomOff)}
+            />
+            <styled.Img 
+              src={icoBedroomOff}
+              onMouseOver={e => (e.currentTarget.src = icoBedroomOn)}
+              onMouseOut={e => (e.currentTarget.src = icoBedroomOff)}
+            />
+            <styled.Img 
+              src={icoKitchenOff}
+              onMouseOver={e => (e.currentTarget.src = icoKitchenOn)}
+              onMouseOut={e => (e.currentTarget.src = icoKitchenOff)}
+            />
+            <styled.Img 
+              src={icoBathroomOff}
+              onMouseOver={e => (e.currentTarget.src = icoBathroomOn)}
+              onMouseOut={e => (e.currentTarget.src = icoBathroomOff)}
+            />
           </styled.SideBtn>
         ))}
-        <styled.PlusButton onClick={handleClick}>
+        <styled.PlusButton>
           <styled.Img src={plus} />
         </styled.PlusButton>
-        <Dialog show={show} handleClose={handleClick}>
-          <CreateTask />
-        </Dialog>
       </styled.ButtonWrapper>
     </styled.Wrapper>
   );
