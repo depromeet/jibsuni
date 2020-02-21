@@ -5,6 +5,8 @@ export function createInitialCommonState() {
     rooms: [],
     tasks: [],
     totalCount: null,
+    countOfTodo: null,
+    countOfDone: null,
     selectedRoomId: null,
     selectedRoomType: null,
   };
@@ -31,13 +33,14 @@ export function roomReducer(state = createInitialCommonState(), action) {
       return {
         ...state,
         tasks: action.payload.tasks,
-        totalCount: action.payload.totalCount,
       };
     }
-    case RoomActionType.COUNT_ROOM_TASKS: {
+    case RoomActionType.GET_TASKS_COUNTS: {
       return {
         ...state,
-        totalCount: action.payload.totalCount,
+        totalCount: action.payload.count.total,
+        countOfTodo: action.payload.count.countOfTodo,
+        countOfDone: action.payload.count.countOfDone,
       };
     }
     default:
