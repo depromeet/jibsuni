@@ -12,32 +12,37 @@ import bedroomDressingtableOn from '../../../images/bedroom-dressingtable-on.svg
 import bedroomDeskOn from '../../../images/bedroom-desk-on.svg'
 import bedroomClothesOn from '../../../images/bedroom-clothes-on.svg'
 
-function Bedroom() {
+function Bedroom({ handleClick }) {
   return (
     <styled.Room>
       <styled.Bedroom src={bedroom}/>
       <styled.BedroomBedOff 
         src={bedroomBedOff} 
+        onClick={handleClick}
         onMouseOver={e => (e.currentTarget.src = bedroomBedOn)}
         onMouseOut={e => (e.currentTarget.src = bedroomBedOff)}
       />
       <styled.bedroomTrashcanOff
         src={bedroomTrashcanOff}
+        onClick={handleClick}
         onMouseOver={e => (e.currentTarget.src = bedroomTrashcanOn)}
         onMouseOut={e => (e.currentTarget.src = bedroomTrashcanOff)}
       />
       <styled.bedroomDressingtableOff
         src={bedroomDressingtableOff}
+        onClick={handleClick}
         onMouseOver={e => (e.currentTarget.src = bedroomDressingtableOn)}
         onMouseOut={e => (e.currentTarget.src = bedroomDressingtableOff)}
       />
       <styled.bedroomDeskOff 
         src={bedroomDeskOff}
+        onClick={handleClick}
         onMouseOver={e => (e.currentTarget.src = bedroomDeskOn)}
         onMouseOut={e => (e.currentTarget.src = bedroomDeskOff)}
       />
       <styled.bedroomClothesOff 
         src={bedroomClothesOff}
+        onClick={handleClick}
         onMouseOver={e => (e.currentTarget.src = bedroomClothesOn)}
         onMouseOut={e => (e.currentTarget.src = bedroomClothesOff)}
       />
