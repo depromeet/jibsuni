@@ -36,10 +36,18 @@ export const SideBtn = styled.div`
   ` : ''};
 `;
 
-export const Img = styled.img`
+export const PlusButton = styled.button`
   width: 50px;
   height: 50px;
   position: absolute;
   bottom: 113px;
   left: 38px;
+  border: none;
+  background: none;
+  cursor: pointer;
+`;
+
+export const Img = styled.img`
+  width: 100%;
+  height: 100%;
 `;
