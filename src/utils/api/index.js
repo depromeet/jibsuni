@@ -49,17 +49,28 @@ export async function getRoomsAPI(token) {
       "Authorization": `Bearer ${token}`,
     }
   });
+  console.log(data);
   return data;
 }
 
 export async function getTasksAPI(token) {
-    const { data } = await axios.get(`/api/tasks`, {
-      headers: {
-        "Authorization": `Bearer ${token}`,
-      }
-    });
-    return data;
-  }
+  const { data } = await axios.get(`/api/tasks`, {
+    headers: {
+      "Authorization": `Bearer ${token}`,
+    }
+  });
+  return data;
+}
+
+export async function getTasksCountsAPI(token){
+  const { data } = await axios.get(`/api/tasks/counts`, {
+    headers: {
+      "Authorization": `Bearer ${token}`,
+    }
+  });
+  console.log(data);
+  return data;
+}
 
 export async function getRoomTasksAPI(token, roomId) {
   const { data } = await axios.get(`/api/rooms/${roomId}/tasks`, {
@@ -76,45 +87,24 @@ export async function postTaskCompleteAPI(token, taskId){
       "Authorization": `Bearer ${token}`,
     }
   });
-  // console.log(data);
   return data;
 }
 
-export async function getFurnitures(roomId, page, size) {
-  const token = localStorage.getItem(AUTH_TOKEN_STORAGE_KEY);
-  const { data } = await axios.get(`/api/me/rooms/${roomId}/furnitures`, {
+export async function postTaskIncompleteAPI(token, taskId){
+  const { data } = await axios.post(`/api/tasks/${taskId}/incomplete`, null, {
     headers: {
       "Authorization": `Bearer ${token}`,
-    },
-    params: {
-      page,
-      size
     }
   });
-  return data
+  return data;
 }
 
-export async function createFurnitures(roomId, furnitureType) {
-  const token = localStorage.getItem(AUTH_TOKEN_STORAGE_KEY);
-  const { data } = await axios.get(`/api/me/rooms/${roomId}/furnitures`, {
+export async function getFurnituresAPI(token, roomId){
+  const { data } = await axios.get(`/api/rooms/${roomId}/furnitures`, {
     headers: {
       "Authorization": `Bearer ${token}`,
-    },
-    data: {
-      createFurnitureRequest: {
-        "furnitureType": furnitureType
-      }
     }
   });
-  return data
-}
-
-export async function getFurniture(roomId, furnitureId) {
-  const token = localStorage.getItem(AUTH_TOKEN_STORAGE_KEY);
-  const { data } = await axios.get(`/api/rooms/${roomId}/furnitures/${furnitureId}`, {
-    headers: {
-      "Authorization": `Bearer ${token}`,
-    },
-  });
-  return data
+  console.log(data);
+  return data;
 }
