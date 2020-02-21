@@ -1,16 +1,16 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getRoomsAPI, getTasksAPI, getRoomTasksAPI, postTaskCompleteAPI } from '../../utils/api';
+import { getRoomsAction, selectRoomAction, getSelectRoomTasksAction, countRoomTasksAction } from '../../store/actions/RoomActions';
+import { roomNameByType } from '../../constants/roomType';
 
 import Count from '../../components/Count';
 import Weather from '../../components/Weather';
 import NavBar from '../../components/NavBar';
-import profile from '../../images/profile.svg';
 import * as styled from './style';
+import profile from '../../images/profile.svg';
 import checkOff from '../../images/ico-check-off.svg';
 import checkOn from '../../images/ico-check-on.svg';
-import { getRoomsAPI, getTasksAPI, getRoomTasksAPI } from '../../utils/api';
-import { getRoomsAction, selectRoomAction, getSelectRoomTasksAction } from '../../store/actions/RoomActions';
-import { roomNameByType } from '../../constants/roomType';
 
 function Board() {
   const dispatch = useDispatch();
@@ -18,20 +18,32 @@ function Board() {
   const token = useSelector(state => state.auth.token);
   const rooms = useSelector(state => state.room.rooms);
   const tasks = useSelector(state => state.room.tasks);
+  const totalCount = useSelector(state => state.room.totalCount);
   const selectedRoomId = useSelector(state => state.room.selectedRoomId);
 
   const handleNavClick = useCallback(async (room) => {
     try {
-      dispatch(selectRoomAction(room.id));
-      if(room.id == 'ALL'){
+      dispatch(selectRoomAction({
+        roomId: room.id, roomType: room.type
+      }));
+      if (room.id == 'ALL') {
         getTasksAPI(token).then(result => {
           dispatch(
             getSelectRoomTasksAction({
               tasks: result.data,
+              totalCount: result.totalCount,
             }),
           );
         });
-      }else{
+      } else {
+        getTasksAPI(token).then(result => {
+          // console.log(result.totalCount);
+          // dispatch(
+          //   countRoomTasksAction({
+          //     totalCount: result.totalCount,
+          //   }),
+          // );
+        });
         getRoomTasksAPI(token, room.id).then(result => {
           dispatch(
             getSelectRoomTasksAction({
@@ -39,7 +51,15 @@ function Board() {
             }),
           );
         });
-      } 
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }, [dispatch]);
+
+  const handleCompleteClick = useCallback(async (task) => {
+    try {
+      postTaskCompleteAPI(token, task.id);
     } catch (error) {
       console.error(error);
     }
@@ -59,15 +79,15 @@ function Board() {
     });
 
     getTasksAPI(token).then(result => {
+      // console.log(result)
       dispatch(
         getSelectRoomTasksAction({
           tasks: result.data,
-        }),
+          totalCount: result.totalCount,
+        })
       );
     });
   }, [token, rooms, tasks, dispatch]);
-
-  console.log(rooms);
 
   return (
     <styled.Wrapper>
@@ -82,7 +102,7 @@ function Board() {
         <img alt={profile} src={profile} />
       </styled.Profile>
       <styled.TotalCount>
-        <Count title="전체 일정" count={tasks.length} />
+        <Count title="전체 일정" count={totalCount} />
         <div id="middle">
           <Count title="완료 일정" count={2} />
         </div>
@@ -102,21 +122,21 @@ function Board() {
         ))}
       </styled.NavBarWrapper>
       {
-        tasks.length == 0?
-        <styled.TodoList>
-          할 일이 없어요 :(
+        tasks.length == 0 ?
+          <styled.TodoList>
+            할 일이 없어요 :(
         </styled.TodoList>
-        :
-        <styled.TodoList>
-          {tasks.map((task, i) => (
-            <styled.TodoItem key={task.id}>
-              <styled.Number>{i+1}</styled.Number>
-              <styled.CheckImage src={checkOff} />
-              <styled.Label>{task.furnitureName}</styled.Label>
-              <styled.TodoContent complete={true}>{task.contents}</styled.TodoContent>
-            </styled.TodoItem>
-          ))}
-        </styled.TodoList>
+          :
+          <styled.TodoList>
+            {tasks.map((task, i) => (
+              <styled.TodoItem key={task.id} onClick={() => handleCompleteClick(task)}>
+                <styled.Number>{i + 1}</styled.Number>
+                <styled.CheckImage src={checkOff} />
+                <styled.Label>{task.furnitureName}</styled.Label>
+                <styled.TodoContent complete={false}>{task.contents}</styled.TodoContent>
+              </styled.TodoItem>
+            ))}
+          </styled.TodoList>
       }
     </styled.Wrapper>
   );

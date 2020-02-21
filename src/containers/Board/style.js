@@ -58,6 +58,7 @@ export const TodoItem = styled.li`
   padding: 16px 0;
   min-height: 90px;
   box-sizing: border-box;
+  cursor: pointer;
 `;
 
 export const Number = styled.div`
