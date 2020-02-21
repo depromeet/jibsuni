@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
-
 import {reqGetWeather} from '../../store/actions/WeatherActions'
 import {getWeatherAPI} from "../../utils/api";
 import * as styled from "./style";

@@ -12,4 +12,3 @@ export const RoomType = {
     'living-room': '거실',
     bathroom: '화장실',
   };
-  
