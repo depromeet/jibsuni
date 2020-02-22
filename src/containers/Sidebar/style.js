@@ -24,16 +24,41 @@ export const SideBtn = styled.div`
   border-radius: 50px;
   margin-bottom: 50px;
   cursor: pointer;
+  position: relative;
 
-  &:hover {
-    font-weight: bold;
-    color: #383b41;
-  }
+  & > img:first-child {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    & > img:last-child {
+      opacity: 0;
+      z-index: -1;
+    }
 
   ${p => p.isActive ? `
-    font-weight: bold;
-    color: #ff595f;
+    & > img:first-child {
+      opacity: 0;
+      z-index: -1;
+    }
+
+    & > img:last-child {
+      opacity: 1;
+      z-index: 1;
+    }
   ` : ''};
+
+  &:hover {
+    & > img:first-child {
+      opacity: 0;
+      z-index: -1;
+    }
+
+    & > img:last-child {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
 `;
 
 export const PlusButton = styled.button`
@@ -48,6 +73,9 @@ export const PlusButton = styled.button`
 `;
 
 export const Img = styled.img`
+  position: absolute;
   width: 100%;
   height: 100%;
+  left: 0;
+  top: 0;
 `;
