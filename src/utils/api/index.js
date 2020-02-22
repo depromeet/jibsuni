@@ -49,7 +49,6 @@ export async function getRoomsAPI(token) {
       "Authorization": `Bearer ${token}`,
     }
   });
-  console.log(data);
   return data;
 }
 
@@ -68,7 +67,6 @@ export async function getTasksCountsAPI(token){
       "Authorization": `Bearer ${token}`,
     }
   });
-  console.log(data);
   return data;
 }
 
@@ -105,6 +103,14 @@ export async function getFurnituresAPI(token, roomId){
       "Authorization": `Bearer ${token}`,
     }
   });
-  console.log(data);
+  return data;
+}
+
+export async function postFurnitureTaskAPI(token, furnitureId, contents){
+  const { data } = await axios.post(`/api/furnitures/${furnitureId}/task`, { "contents" : contents }, {
+    headers: {
+      "Authorization": `Bearer ${token}`,
+    }
+  });
   return data;
 }
