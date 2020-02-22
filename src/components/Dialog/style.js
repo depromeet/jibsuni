@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 
 export const Dimmer = styled.div`
   position: absolute;
-  background-color: rgba(97, 103, 111, 0.6);
+  background-color: rgba(97, 103, 111, 0.7);
   left: 0;
   right: 0;
   width: 100%;

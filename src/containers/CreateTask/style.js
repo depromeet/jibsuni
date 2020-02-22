@@ -22,15 +22,17 @@ export const FurnitureList = styled.div`
   position: relative;
   top: 160px;
   margin: 0 auto;
-  background-color: #aaa;
 `;
 
-export const SelectTask = styled.div`
-position: relative;
+export const Input = styled.input`
+  width: 80%;
+  position: relative;
   top: 200px;
   opacity: 0.4;
   font-size: 30px;
   color: #383b41;
+  border: none;
+  border-bottom: 2px solid #777777;
 `;
 
 export const CompleteButton = styled.button`
@@ -46,4 +48,5 @@ export const CompleteButton = styled.button`
   font-size: 30px;
   line-height: 1.07;
   color: #ffffff;
+  cursor: pointer;
 `;
