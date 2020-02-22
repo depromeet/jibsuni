@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getRoomsAPI, getTasksAPI, getRoomTasksAPI, postTaskCompleteAPI, postTaskIncompleteAPI, getTasksCountsAPI } from '../../utils/api';
 import { getRoomsAction, selectRoomAction, getSelectRoomTasksAction, getTasksCountsAction } from '../../store/actions/RoomActions';
 import { roomNameByType } from '../../constants/roomType';
+import { furnitureNameByType } from '../../constants/furnitureType';
 
 import Count from '../../components/Count';
 import Weather from '../../components/Weather';
@@ -163,7 +164,7 @@ function Board() {
               <styled.TodoItem key={task.id} onClick={() => handleCompleteClick(task)}>
                 <styled.Number>{i + 1}</styled.Number>
                 <styled.CheckImage src={task.state == "TODO"? checkOff : checkOn} />
-                <styled.Label>{task.furnitureName}</styled.Label>
+                <styled.Label>{furnitureNameByType[task.furnitureName]}</styled.Label>
                 <styled.TodoContent complete={task.state == "TODO"? false : true}>{task.contents}</styled.TodoContent>
               </styled.TodoItem>
             ))}

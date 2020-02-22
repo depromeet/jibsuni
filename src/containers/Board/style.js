@@ -45,6 +45,8 @@ export const NavBarWrapper = styled.div`
 `;
 
 export const TodoList = styled.ul`
+  height: 430px;
+  overflow-y: scroll;
   display: block;
   list-style: none;
   margin: 0;
