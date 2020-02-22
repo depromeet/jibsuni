@@ -1,8 +1,7 @@
 import React from 'react';
 import KakaoLogin from "../../components/KakaoLogin";
-import backImg from '../../images/login-background.jpeg';
-
 import * as styled from "./style";
+import backImg from '../../images/login-background.jpeg';
 
 const Login = () => {
 

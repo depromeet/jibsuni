@@ -1,70 +1,73 @@
 import styled from "styled-components";
 
 export const Room = styled.div`
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 10px;
   background-color: #b3dadb;
+  opacity: ${p => p.isActive? 0 : 1};
+  z-index: ${p => p.isActive? -1 : 5};
 `;
 
 export const Kitchen = styled.img`
+  position:absolute;
   width: 1000px;
   height: 890px;
 `;
 
 export const KitchenOven = styled.img`
-  width: 179px;
-  height: 389px;
+  width: 138px;
+  height: 175px;
   position: absolute;
-  top: 263px;
-  left: 129px;
+  top: 382px;
+  left: 632px;
+  z-index: 2;
   &:hover {
     cursor: pointer;
   }
 `;
 
 export const KitchenRefrigerator = styled.img`
-  width: 238px;
-  height: 394px;
+  width: 137px;
+  height: 283px;
   position: absolute;
-  top: 247px;
-  left: 586px;
+  top: 292px;
+  left: 181px;
   &:hover {
     cursor: pointer;
   }
 `;
 
 export const KitchenSink = styled.img`
-  width: 150px;
-  height: 219px;
+  width: 391px;
+  height: 243px;
   position: absolute;
-  top: 326px;
-  left: 288px;
+  top: 270px;
+  left: 305px;
   &:hover {
     cursor: pointer;
   }
 `;
 
 export const KitchenTable = styled.img`
-  width: 110px;
-  height: 143px;
+  width: 305px;
+  height: 244px;
   position: absolute;
-  top: 521px;
-  left: 856px;
+  top: 513px;
+  left: 338px;
   &:hover {
     cursor: pointer;
   }
 `;
 
 export const KitchenTrashcan = styled.img`
-  width: 158px;
-  height: 216px;
+  width: 110px;
+  height: 143px;
   position: absolute;
-  top: 263px;
-  left: 481px;
+  top: 498px;
+  left: 781px;
   &:hover {
     cursor: pointer;
   }
 `;
-

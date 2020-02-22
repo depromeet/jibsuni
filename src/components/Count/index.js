@@ -16,4 +16,4 @@ function Count({
   )
 }
 
-export default Count
+export default Count;

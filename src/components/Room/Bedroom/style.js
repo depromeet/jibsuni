@@ -1,14 +1,17 @@
 import styled from "styled-components";
 
 export const Room = styled.div`
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 10px;
   background-color: #b3dadb;
+  opacity: ${p => p.isActive? 0 : 1};
+  z-index: ${p => p.isActive? -1 : 5};
 `;
 
 export const Bedroom = styled.img`
+  position:absolute;
   width: 1000px;
   height: 890px;
 `;

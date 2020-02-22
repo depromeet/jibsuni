@@ -1,5 +1,4 @@
 import React from 'react';
-
 import * as styled from "./style";
 
 function NavBar({
@@ -14,4 +13,4 @@ function NavBar({
   )
 }
 
-export default NavBar
+export default NavBar;

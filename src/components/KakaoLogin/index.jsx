@@ -31,12 +31,12 @@ const KakaoLogin = () => {
       success(authObj) {
         window.Kakao.API.request({
           url: '/v2/user/me',
-          success: function(res) {
+          success: function (res) {
             handleKakaoLogin(authObj.access_token, res.properties.nickname);
-           },
-           fail: function(error) {
+          },
+          fail: function (error) {
             alert(JSON.stringify(error));
-           }
+          }
         });
       },
       fail: function (err) {
@@ -47,7 +47,7 @@ const KakaoLogin = () => {
 
   return (
     <styled.LoginBtn id="custom-login-btn" onClick={onLogin}>
-      <img alt={loginBtn} src={loginBtn}/>
+      <img alt={loginBtn} src={loginBtn} />
     </styled.LoginBtn>
   );
 };
