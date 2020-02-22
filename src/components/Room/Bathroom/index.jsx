@@ -12,9 +12,9 @@ import bathroomToiletOn from '../../../images/bathroom-toilet-on.svg'
 import bathroomTrashcanOn from '../../../images/bathroom-trashcan-on.svg'
 import bathroomWashingmachineOn from '../../../images/bathroom-washingmachine-on.svg'
 
-function Bathroom({ handleClick }) {
+function Bathroom({ isActive, handleClick }) {
   return (
-    <styled.Room>
+    <styled.Room isActive={isActive}>
       <styled.Bathroom src={bathroom} />
       <styled.BathroomShower 
         src={bathroomShowerOff}

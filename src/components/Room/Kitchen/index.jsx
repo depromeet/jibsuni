@@ -12,9 +12,9 @@ import kitchenSinkOn from '../../../images/kitchen-sink-on.svg'
 import kitchenTableOn from '../../../images/kitchen-table-on.svg'
 import kitchenTrashcanOn from '../../../images/kitchen-trashcan-on.svg'
 
-function Kitchen({ handleClick }) {
+function Kitchen({ isActive, handleClick }) {
   return (
-    <styled.Room>
+    <styled.Room isActive={isActive}>
       <styled.Kitchen src={kitchen}/>
       <styled.KitchenOven 
         src={kitchenOvenOff}

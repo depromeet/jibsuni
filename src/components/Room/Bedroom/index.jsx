@@ -12,9 +12,9 @@ import bedroomDressingtableOn from '../../../images/bedroom-dressingtable-on.svg
 import bedroomDeskOn from '../../../images/bedroom-desk-on.svg'
 import bedroomClothesOn from '../../../images/bedroom-clothes-on.svg'
 
-function Bedroom({ handleClick }) {
+function Bedroom({ isActive, handleClick }) {
   return (
-    <styled.Room>
+    <styled.Room isActive={isActive}>
       <styled.Bedroom src={bedroom}/>
       <styled.BedroomBedOff 
         src={bedroomBedOff} 
