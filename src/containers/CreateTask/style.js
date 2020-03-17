@@ -18,9 +18,9 @@ export const Title = styled.p`
 
 export const FurnitureList = styled.div`
   width: 80%;
-  height: 260px;
+  height: 220px;
   position: relative;
-  top: 160px;
+  top: 170px;
   margin: 0 auto;
 `;
 
