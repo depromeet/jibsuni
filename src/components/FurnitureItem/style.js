@@ -2,14 +2,15 @@ import styled from 'styled-components';
 
 export const FurnitureWrapper = styled.div`
   width: 20%;
-  height: 200px;
+  height: 180px;
   position: relative;
   display: inline-block;
   cursor: pointer;
 `;
 
 export const Img = styled.img`
-  width: 100%;
+  width: 80%;
+  height: 120px;
   position: absolute;
   top: 0;
   left: 50%;

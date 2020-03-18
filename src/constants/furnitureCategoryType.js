@@ -3,17 +3,16 @@ import closetThumbImage from '../images/bedroom-category-clothes.svg';
 import deskThumbImage from '../images/bedroom-category-desk.svg';
 import wasteBinThumbImage from '../images/bedroom-category-trashcan.svg';
 import dressingTableThumbImage from '../images/bedroom-category-dressingtable.svg';
-
-import refrigeratorThumbImage from '../images/kitchen-refrigerator-on.svg';
-import sinkThumbImage from '../images/kitchen-sink-on.svg';
-import ovenThumbImage from '../images/kitchen-oven-on.svg';
-import kitchenTrashcanThumbImage from '../images/kitchen-trashcan-on.svg';
-import tableThumbImage from '../images/kitchen-table-on.svg';
-import toiletThumbImage from '../images/bathroom-toilet-on.svg';
-import showerThumbImage from '../images/bathroom-shower-on.svg';
-import washingmachineThumbImage from '../images/bathroom-washingmachine-on.svg';
-import bathTrashcanThumbImage from '../images/bathroom-trashcan-on.svg';
-import basinThumbImage from '../images/bathroom-basin-on.svg';
+import refrigeratorThumbImage from '../images/kitchen-category-refrigerator.svg';
+import sinkThumbImage from '../images/kitchen-category-sink.svg';
+import ovenThumbImage from '../images/kitchen-category-oven.svg';
+import kitchenTrashcanThumbImage from '../images/kitchen-category-trashcan.svg';
+import tableThumbImage from '../images/kitchen-category-table.svg';
+import toiletThumbImage from '../images/bathroom-category-toilet.svg';
+import showerThumbImage from '../images/bathroom-category-shower.svg';
+import washingmachineThumbImage from '../images/bathroom-category-washingmachine.svg';
+import bathTrashcanThumbImage from '../images/bathroom-category-trashcan.svg';
+import basinThumbImage from '../images/bathroom-category-basin.svg';
 
 export const furnitureCategoryImageByType = {
   bed: bedThumbImage,
