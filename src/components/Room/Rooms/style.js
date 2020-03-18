@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Room = styled.div`
+export const Rooms = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);

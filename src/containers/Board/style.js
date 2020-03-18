@@ -34,9 +34,8 @@ export const WeatherWrapper = styled.div`
   width: 470px;
   height: 110px;
   display: flex;
-  opacity: 0.33;
   border-radius: 4px;
-  background-color: #ebecf0;
+  background-color: #f9f9fa;
   margin: 36px auto 46px;
 `;
 

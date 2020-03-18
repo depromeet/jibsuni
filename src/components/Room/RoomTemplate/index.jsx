@@ -4,6 +4,7 @@ import { getFurnituresAPI, getRoomsAPI } from '../../../utils/api';
 
 import Dialog from '../../../components/Dialog';
 import CreateTask from '../../../containers/CreateTask';
+import Rooms from '../Rooms';
 import Bedroom from '../Bedroom';
 import Bathroom from '../Bathroom';
 import Kitchen from '../Kitchen';
@@ -19,7 +20,7 @@ function Room() {
 
   const [show, setShow] = useState(false);
   const handleClick = useCallback(async () => {
-    if (selectedRoomId === 'ALL' || selectedRoomId === 'living-room') {
+    if (selectedRoomType === 'all' || selectedRoomType === 'living-room') {
       alert('준비 중 입니다!');
       return;
     }
@@ -31,40 +32,45 @@ function Room() {
   }, [token, selectedRoomId]);
   
   return (
-    <RoomWrapper>
-      <Emptyroom
-        isActive = {selectedRoomType == "living-room"? false : true} 
-      />
-      <Bedroom 
-        isActive = {selectedRoomType == "all" || selectedRoomType == "bedroom"? false : true} 
-        handleClick={handleClick} 
-      />
-      <Kitchen 
-        isActive = {selectedRoomType == "kitchen"? false : true} 
-        handleClick={handleClick} 
-      />
-      <Bathroom 
-        isActive = {selectedRoomType == "bathroom"? false : true} 
-        handleClick={handleClick} 
-      />
-      <Dialog show={show} handleClose={handleClick}>
-        <CreateTask
-          room={rooms.find(room => room.id === selectedRoomId)}
-          furnitures={furnitures}
-          handleClose={handleClick}
-          // room={selectedRoom} // 선택된 room의 정보
-          // 선택된 furniture의 정보
+    <RoomsWrapper>
+        <Rooms
+          isActive = {selectedRoomType == "all"? false : true} 
+          handleClick={handleClick} 
         />
-      </Dialog>
-    </RoomWrapper>
+        <Emptyroom
+          isActive = {selectedRoomType == "living-room"? false : true} 
+          handleClick={handleClick} 
+        />
+        <Bedroom 
+          isActive = {selectedRoomType == "bedroom"? false : true} 
+          handleClick={handleClick} 
+        />
+        <Kitchen 
+          isActive = {selectedRoomType == "kitchen"? false : true} 
+          handleClick={handleClick} 
+        />
+        <Bathroom 
+          isActive = {selectedRoomType == "bathroom"? false : true} 
+          handleClick={handleClick} 
+        />
+        <Dialog show={show} handleClose={handleClick}>
+          <CreateTask
+            room={rooms.find(room => room.id === selectedRoomId)}
+            furnitures={furnitures}
+            handleClose={handleClick}
+          />
+        </Dialog>
+    </RoomsWrapper>
   )
 }
 
 export default Room;
 
-const RoomWrapper = styled.div`
+const RoomsWrapper = styled.div`
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 100%;
+  border-radius: 10px;
+  background-color: #b3dadb;
 `;
