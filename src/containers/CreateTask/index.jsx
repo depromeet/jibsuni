@@ -11,6 +11,9 @@ function CreateTask({ room, furnitures, handleClose }) {
   const token = useSelector(state => state.auth.token);
 
   const [userInput, setUserInput] = useState('');
+  // Room 에서 가구를 클릭했을 때 가구 id를 useState에 넣어줘야함 (props로 받아오기)
+  // 각 Room 가구를 클릭할 때마다 리덕스에 클릭된 가구 id 저장하고 바뀔 때마다 불러오기
+  // 아래 useState를 useSelector로 바꿔주기 (dispatch를 사용)
   const [furnitureId, setFurnitureId] = useState('');
   const [inputPlaceholder, setInputPlaceholder] = useState('진행하실 내용을 입력해주세요 :)');
 
@@ -35,7 +38,7 @@ function CreateTask({ room, furnitures, handleClose }) {
       alert(error.message);
       console.log(error);
     }
-  }, [handleClose, dispatch]);
+  }, [token, handleClose, dispatch]);
 
   const addNewTask = () => {
     if (userInput.trim().length > 0) {
@@ -55,9 +58,10 @@ function CreateTask({ room, furnitures, handleClose }) {
         {furnitures.map(furniture => (
           <FurnitureItem
             key={furniture.id}
-            furniture = {furniture}
+            furniture={furniture}
             selected={furnitureId === furniture.id}
             onClick={() => setFurnitureId(furniture.id)}
+            // selectedFurnitureType === furniture.type? setFurnitureId(furniture.id)}
           />
         ))}
       </styled.FurnitureList>

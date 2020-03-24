@@ -9,6 +9,7 @@ export function createInitialCommonState() {
     countOfDone: null,
     selectedRoomId: null,
     selectedRoomType: null,
+    selectedFurnitureType: null,
   };
 }
 
@@ -41,6 +42,12 @@ export function roomReducer(state = createInitialCommonState(), action) {
         totalCount: action.payload.count.total,
         countOfTodo: action.payload.count.countOfTodo,
         countOfDone: action.payload.count.countOfDone,
+      };
+    }
+    case RoomActionType.SELECT_FURNITURE: {
+      return {
+        ...state,
+        selectedFurnitureType: action.payload.furnitureType,
       };
     }
     default:

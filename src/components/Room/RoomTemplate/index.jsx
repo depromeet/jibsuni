@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { getFurnituresAPI, getRoomsAPI } from '../../../utils/api';
+import { getFurnituresAPI } from '../../../utils/api';
 
 import Dialog from '../../../components/Dialog';
 import CreateTask from '../../../containers/CreateTask';
@@ -29,28 +29,28 @@ function Room() {
 
     setFurnitures(response.data);
     setShow(prev => !prev);
-  }, [token, selectedRoomId]);
+  }, [token, selectedRoomType, selectedRoomId]);
   
   return (
     <RoomsWrapper>
         <Rooms
-          isActive = {selectedRoomType == "all"? false : true} 
+          isActive = {selectedRoomType === "all"? false : true} 
           handleClick={handleClick} 
         />
         <Emptyroom
-          isActive = {selectedRoomType == "living-room"? false : true} 
+          isActive = {selectedRoomType === "living-room"? false : true} 
           handleClick={handleClick} 
         />
         <Bedroom 
-          isActive = {selectedRoomType == "bedroom"? false : true} 
+          isActive = {selectedRoomType === "bedroom"? false : true} 
           handleClick={handleClick} 
         />
         <Kitchen 
-          isActive = {selectedRoomType == "kitchen"? false : true} 
+          isActive = {selectedRoomType === "kitchen"? false : true} 
           handleClick={handleClick} 
         />
         <Bathroom 
-          isActive = {selectedRoomType == "bathroom"? false : true} 
+          isActive = {selectedRoomType === "bathroom"? false : true} 
           handleClick={handleClick} 
         />
         <Dialog show={show} handleClose={handleClick}>
