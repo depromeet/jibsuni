@@ -29,7 +29,7 @@ function Board() {
       dispatch(selectRoomAction({
         roomId: room.id, roomType: room.type
       }));
-      if (room.id == 'ALL') {
+      if (room.id === 'ALL') {
         getTasksAPI(token).then(result => {
           dispatch(
             getSelectRoomTasksAction({
@@ -49,18 +49,18 @@ function Board() {
     } catch (error) {
       console.error(error);
     }
-  }, [dispatch]);
+  }, [token, dispatch]);
 
   const handleCompleteClick = useCallback(async (task) => {
     try {
-      if(task.state == "DONE"){
+      if(task.state === "DONE"){
         await postTaskIncompleteAPI(token, task.id);
-      }else if(task.state == "TODO"){
+      }else if(task.state === "TODO"){
         await postTaskCompleteAPI(token, task.id);
       }
 
       if (selectedRoomId != null) {
-        if (selectedRoomId == 'ALL') {
+        if (selectedRoomId === 'ALL') {
           getTasksAPI(token).then(result => {
             dispatch(
               getSelectRoomTasksAction({
@@ -154,7 +154,7 @@ function Board() {
         ))}
       </styled.NavBarWrapper>
       {
-        tasks.length == 0 ?
+        tasks.length === 0 ?
           <styled.TodoList>
             할 일이 없어요 :(
         </styled.TodoList>
@@ -163,9 +163,9 @@ function Board() {
             {tasks.map((task, i) => (
               <styled.TodoItem key={task.id} onClick={() => handleCompleteClick(task)}>
                 <styled.Number>{i + 1}</styled.Number>
-                <styled.CheckImage src={task.state == "TODO"? checkOff : checkOn} />
+                <styled.CheckImage src={task.state === "TODO"? checkOff : checkOn} />
                 <styled.Label>{furnitureNameByType[task.furnitureName]}</styled.Label>
-                <styled.TodoContent complete={task.state == "TODO"? false : true}>{task.contents}</styled.TodoContent>
+                <styled.TodoContent complete={task.state === "TODO"? false : true}>{task.contents}</styled.TodoContent>
               </styled.TodoItem>
             ))}
           </styled.TodoList>

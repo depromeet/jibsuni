@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { AUTH_TOKEN_STORAGE_KEY } from '../../constants';
 import { reqPostLogin } from '../../store/actions/AuthActions';

@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTasksAPI, getRoomTasksAPI } from '../../utils/api';
 import { selectRoomAction, getSelectRoomTasksAction } from '../../store/actions/RoomActions';
-import { roomNameByType, roomIconByType } from '../../constants/roomType';
+import { roomIconByType } from '../../constants/roomType';
 
 import * as styled from './style';
 import plus from '../../images/plus.svg';
@@ -18,7 +18,7 @@ function Sidebar() {
       dispatch(selectRoomAction({
         roomId: room.id, roomType: room.type
       }));
-      if (room.id == 'ALL') {
+      if (room.id === 'ALL') {
         getTasksAPI(token).then(result => {
           dispatch(
             getSelectRoomTasksAction({
@@ -39,7 +39,7 @@ function Sidebar() {
     } catch (error) {
       console.error(error);
     }
-  }, [dispatch]);
+  }, [token, dispatch]);
 
   return (
     <styled.Wrapper>
